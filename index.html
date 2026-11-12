@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#087b3d">
+ <title>FUNAAB Vote — Student Elections & Predictions</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site-shell">
+ <header class="header">
+ <a class="brand" href="#home"><img src="assets/funaab-logo.png" alt="FUNAAB crest"><span><b>FUNAAB <em>VOTE</em></b>
+    <small>VOTE TO PUSH YOUR CHOICE.</small></span></a>
+ <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+ <nav class="nav" id="mainNav">
+ <a class="active" href="#home">⌂ Home</a><a href="#elections">♧ Elections</a><a href="#candidates">♙ Candidates</a>
+ <a href="#predictions">♜ Predictions</a><a href="#forms">▤ Forms</a><a href="#wallet">▣ Wallet</a>
+ <a href="#results">▥ Results</a>
+ </nav>
+ <div class="header-actions"><button class="icon-btn" id="notifyBtn" aria-label="Notifications">♧<i></i></button>
+    <button class="btn btn-green" id="authHeaderBtn">♙ Login / Signup</button><div class="user-chip hidden" id="userChip">
+        <span id="userInitial">S</span><b id="userShortName">Student</b><button id="logoutBtn" title="Log out">↪</button></div>
+    </div>
+ </header>
+
+ <main id="home">
+ <section class="hero">
+ <img class="hero-bg" src="assets/hero-artwork.png" alt="">
+ <div class="hero-shade"></div>
+ <div class="hero-content">
+ <div class="hero-tag"><span class="pulse-dot"></span> FUNAAB STUDENT ELECTION & PREDICTION PLATFORM</div>
+ <h1>Vote. Bet. Win.<br><span>FUNAAB</span> Style!</h1>
+ <p>Predict your favourite candidates, follow the race and be part of the change at FUNAAB.</p>
+ <div class="hero-perks"><span>🛡 Verified students only</span><span>⚡ Secure & reliable</span>
+    <span>▥ Transparent results</span></div>
+ <div class="hero-buttons"><button class="btn btn-lime" id="getStarted">Get Started <b>→</b></button>
+    <a class="btn btn-glass" href="#how-it-works">▷ Learn More</a></div>
+ <div class="hero-caption">Your voice. Your campus. Your future.</div>
+ </div>
+ <div class="hero-side-note"><b>STUDENT POWER</b><span>Every voice<br>has a place.</span><i>✦</i></div>
+ </section>
+
+ <section class="quick-strip" id="how-it-works">
+ <a href="#profile"><span>♙</span><b>Create your<br>student profile</b></a><a href="#elections"><span>▣</span><b>Cast your official<br>ballot</b></a><a href="#predictions"><span>♜</span><b>Make a prediction<br><small>Max 2 entries</small></b></a><a href="#forms"><span>▤</span><b>Buy nomination<br>forms</b></a><a href="#results"><span>🏆</span><b>Track results<br>live</b></a>
+ </section>
+
+ <section class="section countdown-row wrap">
+ <div class="count-card"><div class="section-kicker">🔥 ELECTION COUNTDOWN</div><div class="countdown" id="countdown">
+    <div><b id="days">00</b><small>Days</small></div><div><b id="hours">00</b><small>Hours</small></div>
+    <div><b id="minutes">00</b><small>Minutes</small></div><div><b id="seconds">00</b><small>Seconds</small></div></div>
+    <span class="count-note" id="countNote">Election date · Change in admin settings</span></div>
+ <div class="live-card"><div class="card-heading"><b>▥ Live results preview</b><a href="#results">View all →</a></div>
+ <div class="mini-result"><span class="candidate-avatar av1">DA</span><div><b>David Adekunle</b><small>SUG President</small>
+    <div class="progress"><i style="width:58%"></i></div></div><strong>58%</strong></div><div class="mini-result">
+        <span class="candidate-avatar av2">IY</span><div><b>Ibrahim Yusuf</b><small>SUG President</small>
+            <div class="progress"><i class="bar2" style="width:42%"></i></div></div><strong>42%</strong></div>
+            <small class="sample-note">Illustrative data — not official results.</small></div>
+ </section>
+
+ <section class="section wrap" id="profile">
+ <div class="section-title"><div><span class="kicker">YOUR CAMPUS IDENTITY</span><h2>Student profile</h2><p>Your profile connects you to the right elections and ballot.</p></div><button class="btn btn-outline" id="editProfileBtn">Edit profile ↗</button></div>
+ <div class="profile-panel">
+ <div class="profile-avatar" id="profileAvatar">FS</div><div class="profile-main"><div class="profile-name">
+    <h3 id="profileName">FUNAAB Student</h3><span class="verified-pill">✓ Verification pending</span></div>
+    <p id="profileEmail">Sign in or create an account to load your profile details.</p>
+    <div class="profile-meta"><span>Matric no. <b id="profileMatric">—</b></span><span>Department 
+        <b id="profileDept">—</b></span><span>College <b id="profileCollege">—</b></span><span>Level 
+            <b id="profileLevel">—</b></span></div></div><div class="profile-cta">
+                <button class="btn btn-green" id="profileAuthBtn">Create student profile</button>
+                <small>Student details are profile information until connected to university verification.</small>
+            </div>
+ </div>
+ <div class="student-dashboard" id="studentDashboard">
+ <div class="dashboard-heading"><div><span class="kicker">PERSONAL OVERVIEW</span><h3>My student dashboard</h3>
+    <p>Your registered information and activity at a glance.</p></div>
+    <span class="dashboard-state" id="dashboardState">Please log in</span></div>
+ <div class="dashboard-details" id="dashboardDetails"><div><small>Full name</small><b>—</b></div>
+ <div><small>Matric number</small><b>—</b></div>
+ <div><small>Email</small><b>—</b></div><div><small>Phone</small><b>—</b>
+</div><div><small>Department</small>
+    <b>—</b></div>
+ <div><small>College</small><b>—</b></div><div><small>Level</small><b>—</b></div></div>
+ <div class="dashboard-stats"><div><small>Wallet balance</small><b id="dashBalance">₦25,000</b></div>
+ <div><small>Prediction entries</small><b id="dashEntries">0 / 2</b></div><div><small>Official ballots</small>
+    <b id="dashVotes">0</b></div><div><small>Nomination forms</small><b id="dashForms">0</b></div></div>
+ </div>
+ </section>
+
+ <section class="section wrap" id="elections">
+ <div class="section-title"><div><span class="kicker">YOUR CAMPUS, YOUR CHOICE</span><h2>Explore elections</h2>
+    <p>Official voting is separate from paid predictions. A ballot cannot be bought.</p></div>
+    <span class="status-label"><i></i> Election season</span></div>
+ <div class="election-grid">
+ <article class="election-card green-card"><div class="election-icon">⌂</div>
+    <span class="level">LEVEL 01</span><h3>Departmental<br>elections</h3>
+    <p>Choose representatives who understand your department.</p><div class="election-foot"><span>Executives · Class reps</span>
+        <button data-level="Departmental" class="circle-arrow">↗</button></div></article>
+ <article class="election-card blue-card"><div class="election-icon">▦</div>
+    <span class="level">LEVEL 02</span><h3>College<br>elections</h3><p>Shape student representation across your college.</p>
+    <div class="election-foot"><span>College President · Reps</span><button data-level="College" class="circle-arrow">↗</button>
+    </div></article>
+ <article class="election-card gold-card"><div class="election-icon">✦</div>
+    <span class="level">LEVEL 03</span><h3>SUG<br>elections</h3>
+    <p>Have a say in university-wide student leadership.</p><div class="election-foot">
+        <span>President · VP · Executives</span><button data-level="SUG" class="circle-arrow">↗</button></div>
+    </article>
+ </div>
+ <div class="ballot-panel"><div><span class="kicker">OFFICIAL BALLOT</span>
+    <h3>Cast your student vote</h3><p>One verified student, one ballot per position. Free of charge.</p></div>
+    <div class="ballot-controls"><select id="ballotLevel"><option>Departmental</option><option>College</option>
+        <option selected>SUG</option></select><select id="ballotPosition"><option>President</option>
+            <option>Vice President</option><option>General Secretary</option><option>Assistant General Secretary</option>
+            <option>Financial Secretary</option><option>Treasurer</option><option>Social Director</option>
+            <option>Sports Director</option><option>Director of Academics</option><option>Welfare Director</option>
+            <option>Public Relations Officer (PRO)</option><option>Auditor</option><option>Director of Transport</option>
+            <option>Director of Information</option><option>Director of Security</option>
+            <option>Departmental Senator / Representative</option></select><select id="ballotCandidate">
+                <option value="David Adekunle">David Adekunle</option><option value="Ibrahim Yusuf">Ibrahim Yusuf</option>
+                <option value="Mariam Bello">Mariam Bello</option></select>
+                <button class="btn btn-green" id="castVoteBtn">Submit free ballot</button></div>
+            </div>
+ </section>
+
+ <section class="section wrap candidate-directory" id="candidates">
+ <div class="section-title"><div><span class="kicker">MEET THE CONTESTANTS</span><h2>All candidates & manifestos</h2>
+    <p>Browse candidates across SUG, College and departmental elections. Open any profile to read their details and manifesto.</p></div><span class="status-label"><i></i> Candidate directory</span></div>
+ <div class="position-catalogue" id="positionCatalogue"></div><div class="candidate-filters">
+    <input id="candidateSearch" type="search" placeholder="Search candidate, position or department…" aria-label="Search candidates">
+    <select id="candidateLevel" aria-label="Filter by election level">
+        <option value="all">All election levels</option>
+        <option value="SUG">SUG</option><option value="College">College</option>
+        <option value="Departmental">Departmental</option></select></div>
+ <div class="candidate-directory-grid" id="candidateDirectoryGrid"></div>
+ <small class="sample-note">Candidate profiles currently listed are initial records. Additional nominees and verified manifestos can be added by the election administrator.
+
+ </small>
+ </section>
+
+ <section class="section prediction-section" id="predictions"><div class="wrap">
+ <div class="section-title"><div><span class="kicker">PREDICT THE RACE</span><h2>Candidate predictions</h2>
+    <p>Prediction entries are separate from the official ballot. A maximum of two ₦1,000 entries is allowed per candidate.</p>
+</div><span class="prediction-tag">₦1,000 / entry · Max 2 per candidate</span></div>
+ <div class="prediction-layout">
+ <div class="prediction-list">
+ <article class="predict-card"><div class="candidate-photo photo-one">DA</div>
+    <div class="predict-details"><span class="race-label">SUG PRESIDENT</span><h3>David Adekunle</h3><p>“A greater FUNAAB together.”</p>
+        <div class="prediction-stats"><span>Community prediction</span><b>58%</b></div><div class="progress"><i style="width:58%"></i>
+        </div></div><button class="btn btn-bet" data-predict="David Adekunle">Predict ₦1,000</button></article>
+ <article class="predict-card"><div class="candidate-photo photo-two">IY</div>
+    <div class="predict-details"><span class="race-label">SUG PRESIDENT</span><h3>Ibrahim Yusuf</h3><p>“Student-first leadership.”</p>
+        <div class="prediction-stats"><span>Community prediction</span><b>42%</b></div><div class="progress">
+            <i class="bar2" style="width:42%"></i></div></div><button class="btn btn-bet" data-predict="Ibrahim Yusuf">Predict ₦1,000</button>
+        </article>
+ <article class="predict-card"><div class="candidate-photo photo-three">MB</div>
+    <div class="predict-details"><span class="race-label">SUG PRESIDENT</span><h3>Mariam Bello</h3>
+        <p>“Progress through accountability.”</p><div class="prediction-stats"><span>Community prediction</span><b>—</b>
+        </div>
+        <div class="progress"><i style="width:0%"></i></div></div>
+        <button class="btn btn-bet" data-predict="Mariam Bello">Predict ₦1,000</button></article>
+ </div>
+ <aside class="bet-summary"><div class="summary-icon">♜</div>
+    <span class="kicker">MY PREDICTIONS</span><h3>Choose candidates to predict.</h3><div class="bet-stat">
+        <span>Entries used</span><b id="entriesUsed">0 / 2</b></div><div class="bet-stat"><span>Entry price</span><b>₦1,000</b>
+        </div><div class="bet-stat"><span>Entry limit</span><b>2 per candidate</b></div><div class="limit-meter">
+            <i id="limitMeter"></i></div><div class="my-picks" id="myPicks">
+                <small>No prediction entries yet.</small></div>
+                <button class="btn btn-outline btn-full" id="viewPicksBtn">View prediction history</button>
+                <small class="responsible-note"> only. Predictions are not official ballots. Each candidate allows up to two entries.
+
+                </small>
+            </aside>
+ </div>
+ </div></section>
+
+ <section class="section wrap" id="forms">
+ <div class="forms-banner"><div><span class="kicker light">READY TO LEAD?</span>
+    <h2>Your journey to<br>student leadership starts here.</h2>
+    <p>Browse nomination forms for approved positions. Form fees are separate from voting and predictions.
+
+    </p>
+    <button class="btn btn-white" id="openForms">Explore nomination forms ↗</button></div><div class="form-art">
+        <div class="paper"><span>F</span><b>OFFICIAL<br>NOMINATION<br>FORM</b>
+            <small>FUNAAB STUDENT ELECTIONS</small><i></i><i></i>
+        </div>
+        <div class="paper-shadow"></div><b class="form-spark">✦</b></div></div>
+ <div class="form-catalog" id="formCatalog"><article><span>♜</span><div><b>SUG Executive Form</b>
+    <small>President, VP and executive positions</small></div><strong>₦5,000</strong>
+    <button data-form="SUG Executive Form" data-price="5000">Apply</button></article><article><span>▦</span><div>
+        <b>College Executive Form</b><small>College-level positions</small></div><strong>₦3,000</strong>
+        <button data-form="College Executive Form" data-price="3000">Apply</button></article><article><span>⌂</span>
+            <div><b>Departmental Form</b><small>Department-level positions</small></div><strong>₦2,000</strong>
+            <button data-form="Departmental Form" data-price="2000">Apply</button></article>
+        </div>
+ </section>
+
+ <section class="section wallet-section" id="wallet"><div class="wrap wallet-layout"><div>
+    <span class="kicker">YOUR STUDENT FINANCE HUB</span><h2>Wallet & payments</h2>
+    <p>Manage your balance, review activity and see payment flows for approved nomination forms and prediction entries.</p>
+    <ul class="wallet-checks"><li>✓ Wallet balance and transaction history</li><li>✓ Nomination form checkout</li>
+        <li>✓ Prediction entry ledger</li><li>✓ Nigerian Naira display</li></ul>
+        <button class="btn btn-green" id="topupBtn">＋ Top up wallet</button></div>
+        <div class="wallet-card"><div class="wallet-head"><span>MY WALLET <small>STUDENT ACCOUNT</small></span>
+            <span class="wallet-mark">FUNAAB</span></div><small class="balance-label">Available balance</small>
+            <div class="balance" id="walletBalance">₦25,000<span>.00</span></div><div class="wallet-actions">
+                <button id="walletTopup">＋ Add funds</button><button id="walletHistory">↗ History</button></div><hr>
+                <div class="wallet-transactions" id="walletTransactions"><div class="transaction"><span>＋</span>
+                    <div><b>Wallet credit</b><small>Opening balance</small></div><strong class="credit">+ ₦25,000</strong>
+                </div>
+                </div><small class="wallet-footnote">Your Student Wallet. Vote to push your choice.</small></div>
+            </div></section>
+
+ <section class="section wrap" id="results"><div class="section-title"><div>
+    <span class="kicker">TRANSPARENCY BUILDS TRUST</span><h2>Election results</h2>
+    <p>Candidate standings. Results are from certified election officers.</p></div>
+    <button class="btn btn-outline" id="refreshResults">↻ Refresh </button></div><div class="results-grid">
+        <div class="result-main"><div class="result-head"><b>SUG President</b>
+            <span class="status-label"><i></i> Sample results</span></div><div class="result-candidate">
+                <div class="candidate-avatar av1">DA</div><div><b>David Adekunle</b><div class="progress">
+                    <i style="width:58%"></i></div></div><strong>58%</strong></div><div class="result-candidate">
+                        <div class="candidate-avatar av2">IY</div><div><b>Ibrahim Yusuf</b><div class="progress">
+                            <i class="bar2" style="width:42%"></i></div></div><strong>42%</strong></div>
+                            <small class="sample-note">Figures are real data of candidates votes.</small></div>
+                            <div class="turnout-card"><span class="kicker">STUDENT TURNOUT</span><b>76%</b>
+                                <p>Student participation</p>
+                                <div class="progress"><i style="width:76%"></i></div>
+                                <small>Replace with verified turnout data after polls close.</small></div></div></section>
+
+ <section class="section admin-section"><div class="wrap admin-banner"><div>
+    <span class="kicker light">PORTAL MANAGEMENT</span><h2>Election admin dashboard</h2>
+    <p>Manage candidates, election levels, positions, nomination forms, results and student verification.</p></div>
+    <button class="btn btn-white" id="adminBtn">Open admin ↗</button></div>
+</section>
+ </main>
+
+ <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#home"><img src="assets/funaab-logo.png" alt="">
+    <span><b>FUNAAB <em>VOTE</em></b><small>VOTE TO PUSH YOUR CHOICE.</small></span></a>
+    <span>Built for student participation and transparent campus elections.</span>
+    <span>© 2026 FUNAAB Vote · Prototype</span></div></footer>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-backdrop" id="authModal"><section class="modal auth-modal"><button class="close-modal">×</button>
+    <div class="modal-logo"><img src="assets/funaab-logo.png" alt=""></div>
+    <span class="kicker">STUDENT ACCESS</span><h2 id="authTitle">Create your student account</h2>
+    <p id="authIntro">Register with your student details. Please make sure your details are correct.</p>
+    <div class="auth-tabs"><button class="selected" data-auth-tab="signup">Sign up</button>
+        <button data-auth-tab="login">Log in</button></div><form id="authForm"><div class="form-grid" id="signupFields">
+            <label>Full name<input name="name" placeholder="Your full name" required></label>
+            <label>Matric number<input name="matric" placeholder="e.g. 2022/12345" required></label>
+            <label>Email address<input name="email" type="email" placeholder="you@example.com" required></label>
+            <label>Phone number<input name="phone" placeholder="+234..." required></label>
+            <label>Department<input name="department" placeholder="Your department" required></label>
+            <label>College<select name="college" required><option value="">Select college</option>
+                <option>COLPHYS</option><option>COLBIOS</option><option>COLANIM</option><option>COLPLANT</option>
+                <option>COLENG</option><option>COLAMRUD</option><option>COLERM</option><option>COLVET</option>
+                <option>COLFHEC</option></select></label><label>Level<select name="level"><option>100 level</option>
+                    <option>200 level</option><option>300 level</option><option>400 level</option><option>500 level</option>
+                    <option>600 level</option></select></label>
+                    <label>Password<input name="password" type="password" minlength="6" placeholder="At least 6 characters" required></label>
+                </div><button class="btn btn-green btn-full" id="authSubmit">Create student account →</button></form>
+                <small class="modal-legal">By continuing, you agree to the portal terms. Please make sure your details are correctly inputed.</small>
+            </section></div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-backdrop" id="checkoutModal"><section class="modal checkout-modal"><button class="close-modal">×</button>
+    <span class="kicker">CONFIRM TRANSACTION</span><h2 id="checkoutTitle">Prediction entry</h2>
+    <p id="checkoutDesc">You are about to use a wallet balance.</p><div class="checkout-line"><span>Amount</span>
+        <b id="checkoutAmount">₦1,000</b></div><div class="checkout-line"><span>Wallet balance</span>
+            <b id="checkoutBalance">₦25,000</b></div><div class="checkout-line total"><span>New balance</span>
+                <b id="checkoutNewBalance">₦24,000</b></div>
+                <button class="btn btn-green btn-full" id="confirmCheckout">Confirm transaction</button>
+                <small class="modal-legal">Money is used to push your choice. No refund available.</small>
+            </section></div>
+
+<!-- HISTORY MODAL -->
+<div class="modal-backdrop" id="historyModal"><section class="modal"><button class="close-modal">×</button>
+    <span class="kicker">ACCOUNT ACTIVITY</span><h2>My activity</h2><div id="historyContent" class="history-content"></div>
+</section></div>
+
+<!-- ADMIN MODAL -->
+<div class="modal-backdrop" id="adminModal">
+    <section class="modal admin-modal"><button class="close-modal">×</button>
+        <span class="kicker">ADMINISTRATOR PREVIEW</span><h2>Portal control centre</h2>
+        <p>Sample admin controls. Production access must be role-protected on a server.</p><div class="admin-stats"><div>
+            <b id="adminStudents">0</b><small>Student accounts</small></div><div>
+                <b id="adminPredictions">0</b><small>Prediction entries</small></div><div><b>3</b>
+                    <small>Election levels</small></div></div><div class="admin-actions">
+                        <button data-admin-action="Candidates">＋ Manage candidates</button>
+                        <button data-admin-action="Election settings">⚙ Election settings</button>
+                        <button data-admin-action="Form catalogue">▤ Form catalogue</button>
+                        <button data-admin-action="Export report">⇩ Export report</button></div>
+                        <small class="modal-legal">This platform is an opportunity to push your preferred candidates to win.</small></section></div>
+
+<div class="modal-backdrop" id="candidateModal"><section class="modal candidate-modal">
+    <button class="close-modal">×</button><span class="kicker" id="candidateModalLevel">CANDIDATE PROFILE</span>
+    <h2 id="candidateModalName">Candidate name</h2><p id="candidateModalPosition"></p>
+    <div class="candidate-profile-meta" id="candidateModalMeta"></div><h3>About the candidate</h3>
+    <p id="candidateModalBio"></p><h3>Manifesto & priorities</h3><ul id="candidateModalManifesto" class="manifesto-list"></ul>
+    <small class="modal-legal">Illustrative profile content. Candidate statements must be verified and approved before official use.</small>
+</section></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
